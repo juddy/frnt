@@ -1,4 +1,3 @@
-ABOUT:
 FRNT is a text based user interface based on [M80 framework by Kjetil](http://kobolt.dyndns.org/infocenter/index.php?article=7).
 
 In itself, FRNT cannot do anything
@@ -6,6 +5,7 @@ and is reliant on modules to be loaded. Some sample modules are included in the
 distribution to make the framework usable at once. All modules will be
 represented by a window in the framework that provides the interaction.
 
+![](frnt.png)
 
 ##Installation:
 FRNT and its modules are dependent on the ncurses terminal handling library, so
@@ -27,23 +27,36 @@ The default module directory is the current directory.
 ##Included Modules:
 
 Menu       : Comprehensive menu system to ease general usage.
+
 Clock      : Simple clock to provide current time.
+
 Calculator : "Desk calculator" for integer calculations.
+
 Notepad    : Provides a quick way to write down stuff.
+
 Run Program: Run other programs while temporarily suspending FRNT.
+
 Log Viewer : Monitor a file and immediately display changes.
 
 
 ##Keys:
 
 The following functions keys are caught and used by the FRNT framework itself:
+
 F5 =  Move window in focus left.
+
 F6 =  Move window in focus down.
+
 F7 =  Move window in focus up.
+
 F8 =  Move window in focus right.
+
 F9 =  Change focus to another window.
+
 F10 = Quit the FRNT framework.
+
 F11 = Unload window in focus.
+
 F12 = Save layout back to init file.
 
 All other keys are sent to the window in focus, and the behaviour is
@@ -72,10 +85,15 @@ structure, and some other constants that provide interaction with the framework.
 
 All modules must provide 5 functions that will be called by the framework on
 different occasions:
+
 *_init   : Called during loading of the module to setup data.
+
 *_unload : Called during unloading of a module. (To free memory, handles, etc.)
+
 *_redraw : Called every cycle to redraw the window (with or without focus.)
+
 *_event  : Called when the module/window is in focus and receives an event.
+
 *_tick   : Called every cycle to do background work.
 
 The cyclic calls are done in this order: event, tick, redraw.
@@ -91,6 +109,7 @@ of the system/framework and make the system look like it "hangs".
 
 A module can send a command back to the FRNT framework manager to perform certain
 special operations like:
+
 - Terminate FRNT.                            (FRNT_COMMAND_EXIT)
 - Load another module.                      (FRNT_COMMAND_LOAD)
 - Unload another module or itself.          (FRNT_COMMAND_UNLOAD)
