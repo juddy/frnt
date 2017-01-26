@@ -243,8 +243,8 @@ int main(int argc, char *argv[])
   initscr();
   if (has_colors()) {
     start_color();
-    init_pair(FRNT_COLOR_COMMON, COLOR_WHITE, COLOR_BLUE);
-    init_pair(FRNT_COLOR_FOCUS, COLOR_YELLOW, COLOR_BLUE);
+    init_pair(FRNT_COLOR_COMMON, COLOR_BLUE, COLOR_CYAN);
+    init_pair(FRNT_COLOR_FOCUS, COLOR_CYAN, COLOR_BLUE);
     bkgd(COLOR_PAIR(FRNT_COLOR_COMMON));
   }
   atexit((void *)endwin);
