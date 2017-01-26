@@ -17,12 +17,14 @@ it if you have another setup.)
 
 
 ##Notes:
+
 Resizing the terminal while running FRNT is possible, but not recommended due to
 some strange side effects like windows outside the screen, etc.
 Only one module of its kind can be loaded at the same time.
 Unloading all modules will terminate FRNT.
 The default module directory is the current directory.
 
+'frnt' is intended for use on Linux/BSD systems, and doesn't readily build on macOS.
 
 ##Included Modules:
 
